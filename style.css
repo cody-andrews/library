@@ -1,0 +1,43 @@
+:root {
+    --white: #FFFFFF;
+    --grey: #D3D3D3;
+    --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+*   {
+    margin: 0;
+    padding: 0;
+}
+
+h1  {
+    display: flex;
+    background-color: var(--white);
+    height: 100px;
+    align-items: center;
+    padding-left: 100px;
+    box-shadow: var(--shadow);
+
+}
+
+body    {
+    background-color: var(--grey);
+}
+
+.addBookDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addBookBtn {
+    background-color: var(--grey);
+    font-size: 28px;
+    height: 45px;
+    width: 150px;
+    border: none;
+    margin: 32px;
+}
+.addBookBtn:hover   {
+    transition:  0.65s ease-in-out;
+    background-color: var(--white);
+    border-radius: 10px;
+}
