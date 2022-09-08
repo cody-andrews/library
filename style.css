@@ -19,16 +19,57 @@ h1  {
 
 }
 
-body    {
-    background-color: var(--grey);
+h2  {
+    text-align: center;
 }
 
-.addBookDiv {
-    display: flex;
+body    {
+    background-color: var(--grey);
+    display: flexbox;
     align-items: center;
-    justify-content: center;
+    text-align: center;
 }
-.addBookBtn {
+
+.addBookContainer   {
+    display: inline-block;
+}
+
+#bookFormPopup  {
+    display: flexbox;
+    visibility: hidden;
+}
+.bookFormPopup {
+    /* display: flexbox; */
+    align-items: center;    
+    justify-content: center;
+    max-width: 200px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+#myForm input[type=text]{
+    width: auto;
+    padding: 10px;
+    margin: 5px 0px 5px 0px;
+    border: none;
+    border-radius: 5px;
+    background: #f1f1f1;
+  }
+
+.submitBook   {
+    width: 80%;
+    margin: 5px 0px 0px 0px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+.checkBox {
+    margin-left: 10px;
+}
+
+
+.openFormBtn {
     background-color: var(--grey);
     font-size: 28px;
     height: 45px;
@@ -36,7 +77,7 @@ body    {
     border: none;
     margin: 32px;
 }
-.addBookBtn:hover   {
+.openFormBtn:hover   {
     transition:  0.65s ease-in-out;
     background-color: var(--white);
     border-radius: 10px;

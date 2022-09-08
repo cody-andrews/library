@@ -5,17 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
 
 <header>
     <h1>Library</h1>
-</header>   
-<div class="addBookDiv">
-    <button class="addBookBtn">+ Add book</button>
+</header>  
+
+
+<div class="addBookContainer">
+    <button class="openFormBtn" onclick="openForm()">+ Add book</button>
+
+
+    <div class="bookFormPopup" id="bookFormPopup">
+        
+        <form id="myForm">
+            
+            <h2>Add new book</h1>
+            
+            <label for="title">
+                <Input id='title' type="text" placeholder="Title" name="title" required></Input>
+            </label>
+            
+            <label for="author">
+                <Input id ='author' type="text" placeholder="Author" name="Author" required></Input>
+            </label>
+            
+            <label for="pages">
+                <Input id='pages' type="text" placeholder="Pages" name="Pages" required></Input>
+            </label>
+            <label for="haveRead">Have you read it?</label>
+
+            <Input id='haveRead' type='checkbox' placeholder="haveRead" name="haveReads" class='checkBox' required></Input>
+            
+        </form>
+        <label for="submitBtn">
+            <button class="submitBook" id="submitBook" onclick="closeForm();">Submit</button>        
+        </label>
+    </div>
 </div>
+
 
 </body>
 </html>
