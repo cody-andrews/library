@@ -1,6 +1,7 @@
 //DOM Objects
 
 const submit = document.querySelector('#submitBook');
+const haveReadButton = document.querySelector('#have-read-button')
 
 let haveRead = '';
 
@@ -47,23 +48,58 @@ const books = {
 
 
     myLibrary.push(newBook)
-    myLibrary.push(theHobbit)
-    console.log(title.value)
-    for (let i = 0; i < myLibrary.length; i++) {
-      console.log(myLibrary[i]);
-  }    
+    addBookToList(newBook)
     clear()
+
   }
 
    function clear()  {
     document.getElementById('myForm').reset();
    }
 
+   function addBookToList(book)  {
+    const list = document.querySelector('#book-list');
+
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+      <td>${book.title}</td>
+      <td>${book.author}</td>
+      <td>${book.numPages}</td>
+      <td><button id='have-read-button'>${book.haveRead}</button></td>
+      <td><a href='#'class='delete'>X</a></td>
+
+    `;
+
+    list.appendChild(row);
+   }
+
+   function deleteBook(el)  {
+    if(el.classList.contains('delete')){
+      el.parentElement.parentElement.remove();
+    }
+   }
+
+   function changeReadStatus(e)  {
+    const btn = document.getElementById('#have-read-button');
+    
+    if (e.textContent === 'Yes'){
+      e.textContent = 'No';
+    }
+    else{
+      e.textContent = 'Yes';
+    }
+   }
+
+  
+
+   document.querySelector('#book-list').addEventListener('click', (e) => {
+    deleteBook(e.target);
+    changeReadStatus(e.target)
+   });
+
   submit.addEventListener("click", addBookToLibrary);
-  // addBookToLibrary(theHobbit);
-
-  // console.log(myLibrary[0]);
-
+  
   function openForm() {
     document.getElementById("bookFormPopup").style.setProperty('visibility', 'visible', 'important');
   }
